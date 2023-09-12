@@ -37,3 +37,11 @@ variable "sample_list" {
 output "print_list" {
     value = "Welcome To ${var.sample_list[0]} Training and the batch timings are ${var.sample_list[3]} and the batch number is ${var.sample_list[1]}"
 }
+
+variable "sample_map" {
+    defaule = {
+        batch    = "b55"
+        Mode     = "Online"
+        Training = "DevOpsWithAWS"
+    }
+}
