@@ -63,5 +63,5 @@ output "city_name" {
 variable "state" {}
 
 output "state_name" {
-    value  = var.state_name
+    value  = var.state
 }
