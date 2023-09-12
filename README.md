@@ -11,7 +11,14 @@ It allows you to define and provision infrastructure resources in a declarative 
 With Terraform, you can define the desired state of your infrastructure using a domain-specific language called HashiCorp Configuration Language (HCL) 
 ```
 
->>> Terraform only recognized the files that end with *.tf or *.tfvars 
+>>> Terraform only recognizes the files that end with *.tf or *.tfvars 
 
 *   All the infra files end's with *.tf 
-*   All the variable files ends with `*.tfvars` and `terraform.tfvars` is the default terraform variables file
+*   All the variable files ends with `*.tfvars` and `terraform.tfvars` is the default terraform variables file which will be recognized by terraform by default. 
+*   Any variables file *.tfvars part from terraform.tfvars has to be explicity mentioned while running terraform commands.
+
+> How to supply the varaibles file as a part of the terraform apple ?
+
+```
+    $ terraform plan -var-file=dev.tfvars 
+```
