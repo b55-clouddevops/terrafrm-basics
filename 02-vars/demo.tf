@@ -38,10 +38,16 @@ output "print_list" {
     value = "Welcome To ${var.sample_list[0]} Training and the batch timings are ${var.sample_list[3]} and the batch number is ${var.sample_list[1]}"
 }
 
+# Declaring a Map Variable
 variable "sample_map" {
-    defaule = {
+    default = {
         batch    = "b55"
         Mode     = "Online"
         Training = "DevOpsWithAWS"
     }
+}
+
+# Printing a map variable
+output "sample_map_op" {
+    value = "${var.sample_map["Training"]} has great scope of opportunites and this is complete ${var.sample_map["Mode"]} Training"
 }
