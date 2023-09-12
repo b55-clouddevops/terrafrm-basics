@@ -68,6 +68,6 @@ output "state_name" {
 
 variable "country" {}
 
-variable "country_name" {
+output "country_name" {
     value = "Name Of our country is ${var.country}"
 }
