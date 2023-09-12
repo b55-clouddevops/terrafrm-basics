@@ -17,9 +17,9 @@ output "ops" {
 # In Terraform there is no concept of Single Quotes. 
 
 variable "number" {
-    value   = 100 
+    default  = 100 
 }
 
 output "op_number" {
-    value   = var.number
+    value    = var.number
 }
