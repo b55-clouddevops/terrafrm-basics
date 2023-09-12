@@ -71,3 +71,9 @@ variable "country" {}
 output "country_name" {
     value = "Name Of our country is ${var.country}"
 }
+
+variable "states" {}
+
+output "states_count" {
+    value  = "Toatl number of states in Bharat is ${var.states}"
+}
