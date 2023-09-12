@@ -1,2 +1,3 @@
-city    =   "bangalore"
-state   =   "karnataka"
+city    =  "bangalore"
+state   =  "karnataka"
+country =  "Bharat"  
