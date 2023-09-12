@@ -22,3 +22,9 @@ With Terraform, you can define the desired state of your infrastructure using a 
 ```
     $ terraform plan -var-file=dev.tfvars 
 ```
+
+> How to supply variables from the command line ? use -var city=delhi
+
+```
+    $  terraform plan -var-file=dev.tfvars  -var states=28
+```
