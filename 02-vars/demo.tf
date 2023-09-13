@@ -59,7 +59,6 @@ output "city_name" {
     value = "Name of the city is ${var.city}"
 }
 
-
 variable "state" {}
 
 output "state_name" {
@@ -76,4 +75,10 @@ variable "states" {}
 
 output "states_count" {
     value  = "Toatl number of states in Bharat is ${var.states}"
+}
+
+variable "fav_cloud" {}
+
+output "fav_cloud_op" {
+    value  = "My favorite cloud is ${var.fav_cloud}"
 }
