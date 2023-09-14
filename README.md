@@ -122,3 +122,11 @@ When you do a Terraform Plan, it will load all of them in Alphabetical Order. Bu
 
     99% of the times, a good setup will ensure you as a user won't be having write access on the console.
     Only the IAM Role, which we use to configure JENKINS will only have right access.
+```
+
+
+### Datasource In Terraform 
+
+```
+Datasource helps us to fetch the information of the already existing resources on your cloud.
+```
