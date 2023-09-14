@@ -10,3 +10,7 @@ resource "aws_instance" "moapp" {
 }
 
 variable "sg" {}                                       # Delcare the empty variable of the value you wish to pass and use it
+
+output "publicip" {
+    value   =   aws_instance.moapp.public_ip
+}
