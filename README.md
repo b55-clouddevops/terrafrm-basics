@@ -133,3 +133,50 @@ Datasource helps us to fetch the information of the already existing resources o
 
 
 ### Modules In Terraform
+
+
+
+
+
+
+### What all needs to be created ???
+    1) Network      ( Done )
+    2) Databases    ( MongoDB, MySQL, Redis, RabbitMQ )
+    3) Backend / Applications Components
+
+
+### For DB's , AWS offers PaS [ Managed Service for Databases ] and here is the advantage of it.
+1) Backups and Restoration would be offered by the Cloud Provider 
+2) Maintenance of the unerlying infrastructure will be handled by the Provider
+3) Storage and Maintenance will be handled by the provider 
+4) DB Maintenance will go planned and will be handled by the provider and sometimes it incurs downtime [ only for major upgrages ]
+5) High Availability is offered as per the need.
+
+
+MongoDB     ------->    Document DB    [ Our Applications Code : USER, CART, CATALOGUE are designed to operate with Mongo Without userName and password ]
+MySQL       ------->    RDS 
+Redis       ------->    Elastic Cache 
+RabbitMQ    ------->    Amazon MQ      [Our Application is not compatible with. Hence, we go with RabbitMQ on EC2 only]
+
+
+We will create 5 repos : 
+1) Terraform-Databases [ this will be the root module ]
+2) tf-module-docdb     [ this will be the backend module for Document DB ] 
+3) tf-module-mysql     [ this will be the backend module for MySQL ] 
+4) tf-module-redis     [ this will be the backend module for Redis ]
+5) tf-module-rabbitmq  [ this will be the backend module for RabbitMQ ]  
+
+
+
+### How can we read the information from another statefile ?
+
+In our case, terraform-databases, should have the information of the VPC which is created by the terraform-vpc!!!
+How can one repository reads the information from another state file.
+
+
+```
+Always ensure on adding the needed values as a OUTPUT. So that, those values will be recorded in statefule in a format that will be accessible by other modules.
+
+All the databases, needs the subnet, vpc and other information from the network. Let's record the output.
+So that DB module can be access it.
+```
