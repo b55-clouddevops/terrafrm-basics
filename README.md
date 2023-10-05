@@ -207,3 +207,36 @@ Provisioners helps us to do tasks on the TOP of the created Infra or on the top 
     3) It's always recommended to run the provisioners under the null_resources only. This will restrict the recreation of infra, in the event of the provisioner failure.
 
     4) There are some event based provisioner triggers as well [ we will talk more about this later ] 
+
+
+>>> Best Practices To Be Followed To Qualify all the security standards :
+
+```
+1)  Code should be secret free 
+
+        secret : userName, password, GitHub Token.
+
+2)  Secrets should always be hosted on the Top Of Central Secret Management Solution. Keep Secrets on Jenkins will only let Jenkins and it's jobs to access it. But other technologies cannot access them.
+
+        Central Secret Management Solution :  Hashicorp Vault , AWS Secret Manager
+```
+
+
+### Types Of Infrastructure 
+    1) Mutable Infra          :  Infra always remains the same, only the application moves between the version
+    2) Immutable Infra        :  Infra changes along with the application. 
+    3) Containerized Infra 
+
+### What is our strategy of Cost Optimized Approach with Better Stability ?
+
+> > > 60 - 40 principle :  60% of the instances are OD and 40% of them are SPOT
+    > We need to design the code in such a way that the same code should work across all the environments. 
+    > In DEV, we might say 100% SPOT Instances 
+    > In PROD, we would need 60% On Demand and 40% Spot Instances.
+
+### Here is our backend infra creation flow!
+
+>>> 1)Create EC2 Instances  
+>>> 2) Install the applications component inside it
+>>> 3) Create a Target Group
+>>> 4) Attach the TG to ALB 
