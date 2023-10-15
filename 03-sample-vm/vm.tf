@@ -1,6 +1,6 @@
 resource "aws_instance" "app" {
   # ami                       = "ami-0e977b99c38a13dfc"
-  ami                       = "ami-09cb499e02a2faaa1"
+  ami                       = "ami-0de3437fface34613"
   instance_type             = "t3.medium"
   vpc_security_group_ids    = [aws_security_group.allow_ssh.id]
   key_name                  = "730AM"
