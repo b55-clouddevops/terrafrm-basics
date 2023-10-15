@@ -236,7 +236,27 @@ Provisioners helps us to do tasks on the TOP of the created Infra or on the top 
 
 ### Here is our backend infra creation flow!
 
->>> 1)Create EC2 Instances  
+>>> 1) Create EC2 Instances  
 >>> 2) Install the applications component inside it
->>> 3) Create a Target Group
+>>> 3) Create a Target Group and instances should be added to them
 >>> 4) Attach the TG to ALB 
+
+### Provisioners in Terraform By Default Are Create-Time-Provisioners
+
+```
+    * That means only during the creation of the resource your PROVISIONER running for the first time
+    * Rest of the times, your provisioner won't be picked up. It would just refresh.
+    * But, we also have an option on to tell when this PROVISIONER has to be invoked, using TRIGGERS in terraform.
+```
+
+# How systemd files can be filed with secrets from Secret Manager by Ansible.
+
+>>> Ansible should have the capability to fetch the secret from the AWS Secret Manager.
+
+
+
+### Once the product is ready [ MVP : Minimum Viable Product ], what's next ?
+
+> 1) How can we benchmark the resource of the infrastructure.
+
+> 2) Before we release product to production, we do BENCHMARKING !!!!
